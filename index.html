@@ -10,13 +10,17 @@
 
     
 $.ajax({
-    type:'post',
-    url: "https://z2.yfwq.org",
-    crossDomain:true, //设置跨域为true
-    xhrFields: {
-        withCredentials: true //默认情况下，标准的跨域请求是不会发送cookie的
-    },
-}})
+                type: "POST",
+                url: "https://z2.yfwq.org/",
+                data: JSON.stringify({'num': 1}),
+                dataType: 'json',
+                xhrFields: {
+                    withCredentials: true //允许跨域带Cookie
+                },
+                success: function(data) {
+                    console.log(data)
+                }
+            })
   </script>
 </html>
 
