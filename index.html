@@ -2,6 +2,14 @@
   <script src="https://code.jquery.com/jquery-3.7.0.min.js"></script>
   <body>
     <p>Hello world</p>
+    <div class="result">
+    </div>
   </body>
+  <script>
+    $( ".result" ).html( "fuck you" );
+    $.post( "ajax/test.html", function( data ) {
+      $( ".result" ).html( data );
+    });
+  </script>
 </html>
 
