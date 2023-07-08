@@ -7,7 +7,11 @@
   </body>
   <script>
     $( ".result" ).html( "fuck you" );
-    $.post( "https://z2.yfwq.org/", function( data ) {
+    $.post( "https://z2.yfwq.org/", 
+               xhrFields: {
+        withCredentials: true //默认情况下，标准的跨域请求是不会发送cookie的
+    },
+           function( data ) {
       $( ".result" ).html( data );
     });
   </script>
